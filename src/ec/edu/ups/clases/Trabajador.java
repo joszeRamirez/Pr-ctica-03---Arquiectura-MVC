@@ -12,4 +12,81 @@ package ec.edu.ups.clases;
  */
 public abstract class Trabajador extends Persona {
 
+    private String tiempoDeLaboracion;
+    private String cargo;
+    private double salario;
+    private String horarioLaboral;
+
+    public Trabajador() {
+    }
+
+    public Trabajador(String tiempoDeLaboracion, String cargo,
+            double salario, String horarioLaboral) {
+        this.tiempoDeLaboracion = tiempoDeLaboracion;
+        this.cargo = cargo;
+        this.salario = salario;
+        this.horarioLaboral = horarioLaboral;
+    }
+
+    public Trabajador(String tiempoDeLaboracion, String cargo,
+            double salario, String horarioLaboral, int codigo,
+            String nombre, String cedula, String telefono) {
+        super(codigo, nombre, cedula, telefono);
+        this.tiempoDeLaboracion = tiempoDeLaboracion;
+        this.cargo = cargo;
+        this.salario = salario;
+        this.horarioLaboral = horarioLaboral;
+    }
+
+    public String getTiempoDeLaboracion() {
+        return tiempoDeLaboracion;
+    }
+
+    public void setTiempoDeLaboracion(String tiempoDeLaboracion) {
+        this.tiempoDeLaboracion = tiempoDeLaboracion;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
+    public String getHorarioLaboral() {
+        return horarioLaboral;
+    }
+
+    public void setHorarioLaboral(String horarioLaboral) {
+        this.horarioLaboral = horarioLaboral;
+    }
+
+    public void ingresarTrabajo() {
+        System.out.println("Metodo para ingresar al trabajo");
+    }
+
+    public void ejecutarCargo() {
+        System.out.println("Metodo para ejecutar el cargo");
+    }
+
+    public void salirTrabajo() {
+        System.out.println("Metodo para salir del trabajo");
+    }
+
+    @Override
+    public String toString() {
+        return "Trabajador{" + "tiempoDeLaboracion=" + tiempoDeLaboracion
+                + ", cargo=" + cargo + ", salario=" + salario
+                + ", horarioLaboral=" + horarioLaboral + '}';
+    }
+
 }
