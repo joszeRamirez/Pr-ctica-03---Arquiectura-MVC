@@ -96,4 +96,14 @@ public class Empleado extends Trabajador {
                 + ", tipoEmpleado=" + tipoEmpleado + '}';
     }
 
+    @Override
+    public void llegarAlTrabajo() {
+        System.out.println("LLega en bus");
+    }
+
+    @Override
+    public void GuiarseParaLlegar() {
+        System.out.println("Conoce donde debe bajarse del bus para llegar");
+    }
+
 }

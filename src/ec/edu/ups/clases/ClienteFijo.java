@@ -102,4 +102,14 @@ public class ClienteFijo extends Cliente {
                 + fechaRetiroMercaderia + '}';
     }
 
+    @Override
+    public void pedirFactura() {
+        System.out.println("Pide factura electrónica");
+    }
+
+    @Override
+    public void GuiarseParaLlegar() {
+        System.out.println("Conoce la ruta para llegar");
+    }
+
 }

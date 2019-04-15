@@ -100,4 +100,14 @@ public class Jefe extends Trabajador {
                 + fondosEmpresa + '}';
     }
 
+    @Override
+    public void llegarAlTrabajo() {
+        System.out.println("LLega en auto propio");
+    }
+
+    @Override
+    public void GuiarseParaLlegar() {
+        System.out.println("Conoce las calles para llegar al trabajo");
+    }
+
 }

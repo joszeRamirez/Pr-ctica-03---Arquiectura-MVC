@@ -100,4 +100,14 @@ public class ClienteOcasional extends Cliente {
                 + ", recomendadoPor=" + recomendadoPor + '}';
     }
 
+    @Override
+    public void pedirFactura() {
+        System.out.println("Pide factura física como respaldo");
+    }
+
+    @Override
+    public void GuiarseParaLlegar() {
+        System.out.println("Mediante una aplicación GPS");
+    }
+
 }
