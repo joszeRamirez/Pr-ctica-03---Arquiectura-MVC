@@ -2,6 +2,7 @@ package ec.edu.ups.clases;
 
 import java.util.GregorianCalendar;
 import ec.edu.ups.interfaces.Interface;
+import java.util.Date;
 
 /**
  * Clase Empleado
@@ -17,18 +18,18 @@ public final class Empleado extends Trabajador implements Interface {
 
     private String horaAlmuerzo;
     private String afiliacion;
-    private GregorianCalendar fechaContrato;
+    private Date fechaContrato;
     private String tipoEmpleado;
 
     public Empleado() {
     }
 
-    public Empleado(GregorianCalendar fechaContrato) {
+    public Empleado(Date fechaContrato) {
         this.fechaContrato = fechaContrato;
     }
 
     public Empleado(String horaAlmuerzo, String afiliacion,
-            GregorianCalendar fechaContrato, String tipoEmpleado,
+            Date fechaContrato, String tipoEmpleado,
             String tiempoDeLaboracion, String cargo, double salario,
             String horarioLaboral, int codigo, String nombre,
             String cedula, String telefono) {
@@ -56,11 +57,11 @@ public final class Empleado extends Trabajador implements Interface {
         this.afiliacion = afiliacion;
     }
 
-    public GregorianCalendar getFechaContrato() {
+    public Date getFechaContrato() {
         return fechaContrato;
     }
 
-    public void setFechaContrato(GregorianCalendar fechaContrato) {
+    public void setFechaContrato(Date fechaContrato) {
         this.fechaContrato = fechaContrato;
     }
 
@@ -92,7 +93,7 @@ public final class Empleado extends Trabajador implements Interface {
      */
     @Override
     public String toString() {
-        return "Empleado{" + "horaAlmuerzo=" + horaAlmuerzo + ", afiliacion="
+        return super.toString() +"Empleado{" + "horaAlmuerzo=" + horaAlmuerzo + ", afiliacion="
                 + afiliacion + ", fechaContrato=" + fechaContrato
                 + ", tipoEmpleado=" + tipoEmpleado + '}';
     }

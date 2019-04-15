@@ -96,7 +96,7 @@ public final class ClienteOcasional extends Cliente implements Interface {
      */
     @Override
     public String toString() {
-        return "ClienteOcasional{" + "pagoPorServicio=" + pagoPorServicio
+        return super.toString() + "ClienteOcasional{" + "pagoPorServicio=" + pagoPorServicio
                 + ", cambioRecibido=" + cambioRecibido
                 + ", calificacionPorServicio=" + calificacionPorServicio
                 + ", recomendadoPor=" + recomendadoPor + '}';

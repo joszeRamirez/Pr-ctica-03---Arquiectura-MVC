@@ -2,6 +2,7 @@ package ec.edu.ups.clases;
 
 import java.util.GregorianCalendar;
 import ec.edu.ups.interfaces.Interface;
+import java.util.Date;
 
 /**
  * Clase ClienteFijo
@@ -15,24 +16,24 @@ import ec.edu.ups.interfaces.Interface;
  */
 public final class ClienteFijo extends Cliente implements Interface {
 
-    private GregorianCalendar fechaClienteFijo;
+    private Date fechaClienteFijo;
     private int numCreditos;
     private String ordenCompra;
-    private GregorianCalendar fechaRetiroMercaderia;
+    private Date fechaRetiroMercaderia;
 
     public ClienteFijo() {
     }
 
-    public ClienteFijo(GregorianCalendar fechaClienteFijo, int numCreditos,
-            String ordenCompra, GregorianCalendar fechaRetiroMercaderia) {
+    public ClienteFijo(Date fechaClienteFijo, int numCreditos,
+            String ordenCompra, Date fechaRetiroMercaderia) {
         this.fechaClienteFijo = fechaClienteFijo;
         this.numCreditos = numCreditos;
         this.ordenCompra = ordenCompra;
         this.fechaRetiroMercaderia = fechaRetiroMercaderia;
     }
 
-    public ClienteFijo(GregorianCalendar fechaClienteFijo, int numCreditos,
-            String ordenCompra, GregorianCalendar fechaRetiroMercaderia,
+    public ClienteFijo(Date fechaClienteFijo, int numCreditos,
+            String ordenCompra, Date fechaRetiroMercaderia,
             String tipoPago, double descuento, String tipoSolicitud,
             int cantidadSolicitudes, int codigo, String nombre, String cedula,
             String telefono) {
@@ -44,11 +45,11 @@ public final class ClienteFijo extends Cliente implements Interface {
         this.fechaRetiroMercaderia = fechaRetiroMercaderia;
     }
 
-    public GregorianCalendar getFechaClienteFijo() {
+    public Date getFechaClienteFijo() {
         return fechaClienteFijo;
     }
 
-    public void setFechaClienteFijo(GregorianCalendar fechaClienteFijo) {
+    public void setFechaClienteFijo(Date fechaClienteFijo) {
         this.fechaClienteFijo = fechaClienteFijo;
     }
 
@@ -68,11 +69,11 @@ public final class ClienteFijo extends Cliente implements Interface {
         this.ordenCompra = ordenCompra;
     }
 
-    public GregorianCalendar getFechaRetiroMercaderia() {
+    public Date getFechaRetiroMercaderia() {
         return fechaRetiroMercaderia;
     }
 
-    public void setFechaRetiroMercaderia(GregorianCalendar fechaRetiroMercaderia) {
+    public void setFechaRetiroMercaderia(Date fechaRetiroMercaderia) {
         this.fechaRetiroMercaderia = fechaRetiroMercaderia;
     }
 
@@ -97,7 +98,7 @@ public final class ClienteFijo extends Cliente implements Interface {
      */
     @Override
     public String toString() {
-        return "ClienteFijo{" + "fechaClienteFijo=" + fechaClienteFijo
+        return super.toString() + "ClienteFijo{" + "fechaClienteFijo=" + fechaClienteFijo
                 + ", numCreditos=" + numCreditos + ", ordenCompra="
                 + ordenCompra + ", fechaRetiroMercaderia="
                 + fechaRetiroMercaderia + '}';

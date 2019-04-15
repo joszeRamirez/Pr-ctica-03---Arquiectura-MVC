@@ -1,7 +1,7 @@
 package ec.edu.ups.clases;
 
-import java.util.GregorianCalendar;
 import ec.edu.ups.interfaces.Interface;
+import java.util.Date;
 
 /**
  * Clase Jefe
@@ -13,10 +13,10 @@ import ec.edu.ups.interfaces.Interface;
  * @since 2019
  * @author José Ramírez
  */
-public final class Jefe extends Trabajador implements Interface{
+public final class Jefe extends Trabajador implements Interface {
 
-    private GregorianCalendar fechaInicioEmpresa;
-    private GregorianCalendar fechaPagoEmpleados;
+    private Date fechaInicioEmpresa;
+    private String diaPagoEmpleados;
     private int cantidadSocios;
     private double fondosEmpresa;
 
@@ -30,33 +30,33 @@ public final class Jefe extends Trabajador implements Interface{
                 nombre, cedula, telefono);
     }
 
-    public Jefe(GregorianCalendar fechaInicioEmpresa,
-            GregorianCalendar fechaPagoEmpleados, int cantidadSocios,
+    public Jefe(Date fechaInicioEmpresa,
+            String diaPagoEmpleados, int cantidadSocios,
             double fondosEmpresa, String tiempoDeLaboracion, String cargo,
             double salario, String horarioLaboral, int codigo, String nombre,
             String cedula, String telefono) {
         super(tiempoDeLaboracion, cargo, salario, horarioLaboral, codigo,
                 nombre, cedula, telefono);
         this.fechaInicioEmpresa = fechaInicioEmpresa;
-        this.fechaPagoEmpleados = fechaPagoEmpleados;
+        this.diaPagoEmpleados = diaPagoEmpleados;
         this.cantidadSocios = cantidadSocios;
         this.fondosEmpresa = fondosEmpresa;
     }
 
-    public GregorianCalendar getFechaInicioEmpresa() {
+    public Date getFechaInicioEmpresa() {
         return fechaInicioEmpresa;
     }
 
-    public void setFechaInicioEmpresa(GregorianCalendar fechaInicioEmpresa) {
+    public void setFechaInicioEmpresa(Date fechaInicioEmpresa) {
         this.fechaInicioEmpresa = fechaInicioEmpresa;
     }
 
-    public GregorianCalendar getFechaPagoEmpleados() {
-        return fechaPagoEmpleados;
+    public String getDiaPagoEmpleados() {
+        return diaPagoEmpleados;
     }
 
-    public void setFechaPagoEmpleados(GregorianCalendar fechaPagoEmpleados) {
-        this.fechaPagoEmpleados = fechaPagoEmpleados;
+    public void setFechaPagoEmpleados(String diaPagoEmpleados) {
+        this.diaPagoEmpleados = diaPagoEmpleados;
     }
 
     public int getCantidadSocios() {
@@ -95,8 +95,8 @@ public final class Jefe extends Trabajador implements Interface{
      */
     @Override
     public String toString() {
-        return "Jefe{" + "fechaInicioEmpresa=" + fechaInicioEmpresa
-                + ", fechaPagoEmpleados=" + fechaPagoEmpleados
+        return super.toString() + "Jefe{" + "fechaInicioEmpresa=" + fechaInicioEmpresa
+                + ", diaPagoEmpleados=" + diaPagoEmpleados
                 + ", cantidadSocios=" + cantidadSocios + ", fondosEmpresa="
                 + fondosEmpresa + '}';
     }
@@ -121,5 +121,5 @@ public final class Jefe extends Trabajador implements Interface{
     public void contar() {
         System.out.println("Cuenta el estqado bancario actual de la empresa");
     }
-    
+
 }

@@ -92,7 +92,7 @@ public abstract class Trabajador extends Persona {
      */
     @Override
     public String toString() {
-        return "Trabajador{" + "tiempoDeLaboracion=" + tiempoDeLaboracion
+        return super.toString() + "Trabajador{" + "tiempoDeLaboracion=" + tiempoDeLaboracion
                 + ", cargo=" + cargo + ", salario=" + salario
                 + ", horarioLaboral=" + horarioLaboral + '}';
     }

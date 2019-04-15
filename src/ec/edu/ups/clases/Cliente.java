@@ -93,7 +93,7 @@ public abstract class Cliente extends Persona {
      */
     @Override
     public String toString() {
-        return "Cliente{" + "tipoPago=" + tipoPago + ", descuento=" + descuento
+        return super.toString() + "Cliente{" + "tipoPago=" + tipoPago + ", descuento=" + descuento
                 + ", tipoSolicitud=" + tipoSolicitud + ", cantidadSolicitudes="
                 + cantidadSolicitudes + '}';
     }
