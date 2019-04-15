@@ -83,6 +83,12 @@ public class Empleado extends Trabajador {
         System.out.println("Cumple con lo solicitado por el cliente");
     }
 
+    /**
+     * Método toString que devuelve una cadena de texto, imprimiendo todos los
+     * atributos solicitados
+     *
+     * @return (String) la cadena de texto a imprimir
+     */
     @Override
     public String toString() {
         return "Empleado{" + "horaAlmuerzo=" + horaAlmuerzo + ", afiliacion="

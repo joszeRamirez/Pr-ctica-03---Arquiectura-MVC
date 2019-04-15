@@ -86,6 +86,12 @@ public class ClienteOcasional extends Cliente {
         System.out.println("Compara marcas de productos");
     }
 
+    /**
+     * Método toString que devuelve una cadena de texto, imprimiendo todos los
+     * atributos solicitados
+     *
+     * @return (String) la cadena de texto a imprimir
+     */
     @Override
     public String toString() {
         return "ClienteOcasional{" + "pagoPorServicio=" + pagoPorServicio

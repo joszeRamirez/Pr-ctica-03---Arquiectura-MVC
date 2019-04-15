@@ -86,6 +86,12 @@ public class Jefe extends Trabajador {
         System.out.println("Revisa desempeño de sus empleados");
     }
 
+    /**
+     * Método toString que devuelve una cadena de texto, imprimiendo todos los
+     * atributos solicitados
+     *
+     * @return (String) la cadena de texto a imprimir
+     */
     @Override
     public String toString() {
         return "Jefe{" + "fechaInicioEmpresa=" + fechaInicioEmpresa

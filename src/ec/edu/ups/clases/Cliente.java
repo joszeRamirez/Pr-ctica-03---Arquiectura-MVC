@@ -83,6 +83,14 @@ public abstract class Cliente extends Persona {
                 + " estado");
     }
 
+    public abstract void pedirFactura();
+
+    /**
+     * Método toString que devuelve una cadena de texto, imprimiendo todos los
+     * atributos solicitados
+     *
+     * @return (String) la cadena de texto a imprimir
+     */
     @Override
     public String toString() {
         return "Cliente{" + "tipoPago=" + tipoPago + ", descuento=" + descuento

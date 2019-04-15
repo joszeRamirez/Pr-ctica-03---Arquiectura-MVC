@@ -104,6 +104,8 @@ public abstract class Persona {
         System.out.println("Método para dormir");
     }
 
+    public abstract void GuiarseParaLlegar();
+
     /**
      * Método toString que devuelve una cadena de texto, imprimiendo todos los
      * atributos solicitados

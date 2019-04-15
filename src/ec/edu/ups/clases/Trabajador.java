@@ -82,6 +82,14 @@ public abstract class Trabajador extends Persona {
         System.out.println("Metodo para salir del trabajo");
     }
 
+    public abstract void llegarAlTrabajo();
+
+    /**
+     * Método toString que devuelve una cadena de texto, imprimiendo todos los
+     * atributos solicitados
+     *
+     * @return (String) la cadena de texto a imprimir
+     */
     @Override
     public String toString() {
         return "Trabajador{" + "tiempoDeLaboracion=" + tiempoDeLaboracion
