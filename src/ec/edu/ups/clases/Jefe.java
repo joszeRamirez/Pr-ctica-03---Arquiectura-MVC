@@ -1,6 +1,7 @@
 package ec.edu.ups.clases;
 
 import java.util.GregorianCalendar;
+import ec.edu.ups.interfaces.Interface;
 
 /**
  * Clase Jefe
@@ -12,7 +13,7 @@ import java.util.GregorianCalendar;
  * @since 2019
  * @author José Ramírez
  */
-public final class Jefe extends Trabajador {
+public final class Jefe extends Trabajador implements Interface{
 
     private GregorianCalendar fechaInicioEmpresa;
     private GregorianCalendar fechaPagoEmpleados;
@@ -110,4 +111,15 @@ public final class Jefe extends Trabajador {
         System.out.println("Conoce las calles para llegar al trabajo");
     }
 
+    @Override
+    public void conversar() {
+        System.out.println("Conversa con sus socios sobre el balance "
+                + "empresarial");
+    }
+
+    @Override
+    public void contar() {
+        System.out.println("Cuenta el estqado bancario actual de la empresa");
+    }
+    
 }

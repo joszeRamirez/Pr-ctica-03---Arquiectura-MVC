@@ -1,5 +1,7 @@
 package ec.edu.ups.clases;
 
+import ec.edu.ups.interfaces.Interface;
+
 /**
  * Clase ClienteOcasional
  *
@@ -10,7 +12,7 @@ package ec.edu.ups.clases;
  * @since 2019
  * @author José Ramírez
  */
-public final class ClienteOcasional extends Cliente {
+public final class ClienteOcasional extends Cliente implements Interface {
 
     private double pagoPorServicio;
     private double cambioRecibido;
@@ -108,6 +110,16 @@ public final class ClienteOcasional extends Cliente {
     @Override
     public void GuiarseParaLlegar() {
         System.out.println("Mediante una aplicación GPS");
+    }
+
+    @Override
+    public void conversar() {
+        System.out.println("Conversa con el jefe por un crédito en la empresa");
+    }
+
+    @Override
+    public void contar() {
+        System.out.println("Cuenta el cambio recibido");
     }
 
 }

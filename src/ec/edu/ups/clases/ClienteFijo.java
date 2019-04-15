@@ -1,6 +1,7 @@
 package ec.edu.ups.clases;
 
 import java.util.GregorianCalendar;
+import ec.edu.ups.interfaces.Interface;
 
 /**
  * Clase ClienteFijo
@@ -12,7 +13,7 @@ import java.util.GregorianCalendar;
  * @since 2019
  * @author José Ramírez
  */
-public final class ClienteFijo extends Cliente {
+public final class ClienteFijo extends Cliente implements Interface {
 
     private GregorianCalendar fechaClienteFijo;
     private int numCreditos;
@@ -110,6 +111,16 @@ public final class ClienteFijo extends Cliente {
     @Override
     public void GuiarseParaLlegar() {
         System.out.println("Conoce la ruta para llegar");
+    }
+
+    @Override
+    public void conversar() {
+        System.out.println("Conversa con el jefe por cambios de precios");
+    }
+
+    @Override
+    public void contar() {
+        System.out.println("CUenta la deuda total con la empresa");
     }
 
 }

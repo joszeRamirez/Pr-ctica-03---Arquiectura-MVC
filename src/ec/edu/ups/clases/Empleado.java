@@ -1,6 +1,7 @@
 package ec.edu.ups.clases;
 
 import java.util.GregorianCalendar;
+import ec.edu.ups.interfaces.Interface;
 
 /**
  * Clase Empleado
@@ -12,7 +13,7 @@ import java.util.GregorianCalendar;
  * @since 2019
  * @author José Ramírez
  */
-public final class Empleado extends Trabajador {
+public final class Empleado extends Trabajador implements Interface {
 
     private String horaAlmuerzo;
     private String afiliacion;
@@ -104,6 +105,16 @@ public final class Empleado extends Trabajador {
     @Override
     public void GuiarseParaLlegar() {
         System.out.println("Conoce donde debe bajarse del bus para llegar");
+    }
+
+    @Override
+    public void conversar() {
+        System.out.println("Conversa su vida cotidiana con los demás");
+    }
+
+    @Override
+    public void contar() {
+        System.out.println("Cuenta el estado actual de la caja chica");
     }
 
 }
