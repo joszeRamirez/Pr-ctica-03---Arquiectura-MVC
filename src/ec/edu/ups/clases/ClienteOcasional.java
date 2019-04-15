@@ -10,7 +10,7 @@ package ec.edu.ups.clases;
  * @since 2019
  * @author José Ramírez
  */
-public class ClienteOcasional extends Cliente {
+public final class ClienteOcasional extends Cliente {
 
     private double pagoPorServicio;
     private double cambioRecibido;

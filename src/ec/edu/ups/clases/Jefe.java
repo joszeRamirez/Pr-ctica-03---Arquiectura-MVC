@@ -12,7 +12,7 @@ import java.util.GregorianCalendar;
  * @since 2019
  * @author José Ramírez
  */
-public class Jefe extends Trabajador {
+public final class Jefe extends Trabajador {
 
     private GregorianCalendar fechaInicioEmpresa;
     private GregorianCalendar fechaPagoEmpleados;

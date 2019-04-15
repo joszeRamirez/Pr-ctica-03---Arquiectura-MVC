@@ -12,7 +12,7 @@ import java.util.GregorianCalendar;
  * @since 2019
  * @author José Ramírez
  */
-public class Empleado extends Trabajador {
+public final class Empleado extends Trabajador {
 
     private String horaAlmuerzo;
     private String afiliacion;

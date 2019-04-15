@@ -12,7 +12,7 @@ import java.util.GregorianCalendar;
  * @since 2019
  * @author José Ramírez
  */
-public class ClienteFijo extends Cliente {
+public final class ClienteFijo extends Cliente {
 
     private GregorianCalendar fechaClienteFijo;
     private int numCreditos;
