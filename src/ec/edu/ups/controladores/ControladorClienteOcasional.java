@@ -38,19 +38,21 @@ public class ControladorClienteOcasional {
         return null;
     }
 
-    public void update(ClienteOcasional objeto, int codigo) {
-        for (ClienteOcasional clienteOcasional : listClienteO) {
-            if (clienteOcasional.getCodigo() == codigo) {
-                listClienteO.set(codigo, objeto);
+    public void update(ClienteOcasional objeto) {
+        for (int i = 0; i < listClienteO.size(); i++) {
+            ClienteOcasional elemento = listClienteO.get(i);
+            if (elemento.equals(objeto)) {
+                listClienteO.set(i, objeto);
                 break;
             }
         }
     }
 
     public void delete(int codigo) {
-        for (ClienteOcasional clienteOcasional : listClienteO) {
-            if (clienteOcasional.getCodigo() == codigo) {
-                listClienteO.remove(clienteOcasional);
+        for (int i = 0; i < listClienteO.size(); i++) {
+            ClienteOcasional elemento = listClienteO.get(i);
+            if (elemento.getCodigo() == codigo) {
+                listClienteO.remove(i);
                 break;
             }
         }

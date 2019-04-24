@@ -1,14 +1,64 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ec.edu.ups.controladores;
 
+import ec.edu.ups.clases.Empleado;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
 /**
+ * Clase ControladorEmpleado
  *
- * @author DELL
+ * Clase que manipula el CRUDL para la clase Empleado
+ *
+ * @version 1.0
+ * @since 2019
+ * @author José Ramírez
  */
 public class ControladorEmpleado {
-    
+
+    private SortedSet<Empleado> listEmp;
+    private int cod;
+
+    public ControladorEmpleado() {
+        listEmp = new TreeSet<>();
+        cod = 0;
+    }
+
+    public void create(Empleado objeto) {
+        cod++;
+        objeto.setCodigo(cod);
+        listEmp.add(objeto);
+    }
+
+    public Empleado read(int codigo) {
+        for (Empleado empleado : listEmp) {
+            if (empleado.getCodigo() == codigo) {
+                return empleado;
+            }
+        }
+        return null;
+    }
+
+    public void update(Empleado objeto) {
+        if (listEmp.contains(objeto)) {
+            listEmp.remove(objeto);
+            listEmp.add(objeto);
+        }
+
+    }
+
+    public void delete(int codigo) {
+        for (Empleado empleado : listEmp) {
+            if (empleado.getCodigo() == codigo) {
+                listEmp.remove(empleado);
+                break;
+            }
+        }
+    }
+
+    public void list() {
+        System.out.println("Lista ordenada por nombre:");
+        for (Empleado empleado : listEmp) {
+            System.out.println(empleado);
+        }
+    }
 }

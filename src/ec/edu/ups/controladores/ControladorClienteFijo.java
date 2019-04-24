@@ -4,7 +4,6 @@ import ec.edu.ups.clases.ClienteFijo;
 import java.util.HashSet;
 import java.util.Set;
 
-
 /**
  * Clase ControladorClienteFijo
  *
@@ -40,13 +39,12 @@ public class ControladorClienteFijo {
     }
 
     public void update(ClienteFijo objeto) {
-        for (ClienteFijo clienteFijo : listClienteF) {
-            if (listClienteF.equals(clienteFijo)) {
-                listClienteF.remove(clienteFijo);
-                listClienteF.add(objeto);
-                break;
-            }
+        if (listClienteF.contains(objeto)) {
+            listClienteF.remove(objeto);
+            listClienteF.add(objeto);
+
         }
+
     }
 
     public void delete(int codigo) {

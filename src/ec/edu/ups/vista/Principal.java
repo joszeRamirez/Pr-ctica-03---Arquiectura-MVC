@@ -2,6 +2,7 @@ package ec.edu.ups.vista;
 
 import ec.edu.ups.clases.ClienteFijo;
 import ec.edu.ups.clases.ClienteOcasional;
+import ec.edu.ups.clases.Empleado;
 import ec.edu.ups.controladores.ControladorClienteFijo;
 import ec.edu.ups.controladores.ControladorClienteOcasional;
 import ec.edu.ups.controladores.ControladorEmpleado;
@@ -16,7 +17,7 @@ import java.util.Scanner;
 public class Principal {
 
     //public void Principal() {
-    public static void main(String [] args){
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Scanner num = new Scanner(System.in);
         Scanner doub = new Scanner(System.in);
@@ -89,8 +90,7 @@ public class Principal {
                                 System.out.println("");
                                 break;
                             case 3:
-                                System.out.print("Ingrese el código que desea actualizar: ");
-                                int cod = num.nextInt();
+
                                 System.out.print("Ingrese el nombre del cliente ocasional: ");
                                 nombre = input.nextLine();
                                 System.out.print("Ingrese la cédula del cliente ocasional: ");
@@ -114,12 +114,12 @@ public class Principal {
                                 System.out.print("Ingrese la persona que recomendó al cliente ocasional: ");
                                 recomenPor = input.nextLine();
                                 cliOca = new ClienteOcasional(pagoServi, cambioReci, calificaServi, recomenPor, tipoPago, desc, tipoSoli, cantSoli, nombre, cedula, telefono);
-                                controladorCliOc.update(cliOca, cod);
+                                controladorCliOc.update(cliOca);
                                 System.out.println("Objeto actualizado con éxito");
                                 break;
                             case 4:
                                 System.out.print("Ingrese el código del objeto que desee eliminar: ");
-                                cod = num.nextInt();
+                                int cod = num.nextInt();
                                 controladorCliOc.delete(cod);
                                 System.out.println("Objeto eliminado con éxito");
                                 break;
@@ -169,22 +169,21 @@ public class Principal {
                                 int dia = num.nextInt();
                                 System.out.print("Mes: ");
                                 int mes = num.nextInt();
-                                System.out.println("Año: ");
+                                System.out.print("Año: ");
                                 int anio = num.nextInt();
-                                GregorianCalendar fechaIniCli = new GregorianCalendar(anio, (mes+1), dia);
-                                double pagoServi = doub.nextDouble();
+                                GregorianCalendar fechaIniCli = new GregorianCalendar(anio, (mes + 1), dia);
                                 System.out.print("Ingrese el número de créditos del cliente fijo: ");
                                 int credit = num.nextInt();
                                 System.out.print("Ingrese el número de Orden de compra del cliente fijo ");
                                 String ordenCom = input.nextLine();
-                                System.out.print("Ingrese la fecha de retiro de mercadería del cliente fijo: ");System.out.print("Día: ");
+                                System.out.print("Ingrese la fecha de retiro de mercadería del cliente fijo: ");
+                                System.out.print("Día: ");
                                 dia = num.nextInt();
                                 System.out.print("Mes: ");
                                 mes = num.nextInt();
-                                System.out.println("Año: ");
+                                System.out.print("Año: ");
                                 anio = num.nextInt();
-                                GregorianCalendar fechaRetCli = new GregorianCalendar(anio, (mes+1), dia);
-                                String recomenPor = input.nextLine();
+                                GregorianCalendar fechaRetCli = new GregorianCalendar(anio, (mes + 1), dia);
                                 ClienteFijo cliFi = new ClienteFijo(fechaIniCli.getTime(), credit, ordenCom, fechaRetCli.getTime(), tipoPago, desc, tipoSoli, cantSoli, nombre, cedula, telefono);
                                 controladorCliFi.create(cliFi);
                                 System.out.println("Objeto creado con éxito");
@@ -195,8 +194,7 @@ public class Principal {
                                 System.out.println("");
                                 break;
                             case 3:
-                                System.out.print("Ingrese el código del objeto que desea actualizar: ");
-                                int cod = num.nextInt();
+
                                 System.out.print("Ingrese el nombre del cliente fijo: ");
                                 nombre = input.nextLine();
                                 System.out.print("Ingrese la cédula del cliente fijo: ");
@@ -211,34 +209,33 @@ public class Principal {
                                 tipoSoli = input.nextLine();
                                 System.out.print("Ingrese la cantidad de solicitudes del cliente fijo: ");
                                 cantSoli = num.nextInt();
-                                System.out.print("Ingrese la fecha de inicio del cliente fijo: ");
+                                System.out.println("Ingrese la fecha de inicio del cliente fijo: ");
                                 System.out.print("Día: ");
                                 dia = num.nextInt();
                                 System.out.print("Mes: ");
                                 mes = num.nextInt();
-                                System.out.println("Año: ");
+                                System.out.print("Año: ");
                                 anio = num.nextInt();
-                                fechaIniCli = new GregorianCalendar(anio, (mes+1), dia);
-                                pagoServi = doub.nextDouble();
+                                fechaIniCli = new GregorianCalendar(anio, (mes + 1), dia);
                                 System.out.print("Ingrese el número de créditos del cliente fijo: ");
                                 credit = num.nextInt();
                                 System.out.print("Ingrese el número de Orden de compra del cliente fijo ");
                                 ordenCom = input.nextLine();
-                                System.out.print("Ingrese la fecha de retiro de mercadería del cliente fijo: ");System.out.print("Día: ");
+                                System.out.println("Ingrese la fecha de retiro de mercadería del cliente fijo: ");
+                                System.out.print("Día: ");
                                 dia = num.nextInt();
                                 System.out.print("Mes: ");
                                 mes = num.nextInt();
-                                System.out.println("Año: ");
+                                System.out.print("Año: ");
                                 anio = num.nextInt();
-                                fechaRetCli = new GregorianCalendar(anio, (mes+1), dia);
-                                recomenPor = input.nextLine();
+                                fechaRetCli = new GregorianCalendar(anio, (mes + 1), dia);
                                 cliFi = new ClienteFijo(fechaIniCli.getTime(), credit, ordenCom, fechaRetCli.getTime(), tipoPago, desc, tipoSoli, cantSoli, nombre, cedula, telefono);
                                 controladorCliFi.update(cliFi);
                                 System.out.println("Objeto actualizado con éxito");
                                 break;
                             case 4:
                                 System.out.print("Ingrese el código del objeto que desee eliminar: ");
-                                cod = num.nextInt();
+                                int cod = num.nextInt();
                                 controladorCliFi.delete(cod);
                                 System.out.println("Objeto eliminado con éxito");
                                 break;
@@ -259,7 +256,7 @@ public class Principal {
                 case 3:
 
                     do {
-                        System.out.println(".::MENÚ DEL CLIENTE OCASIONAL::.");
+                        System.out.println(".::MENÚ DEL EMPLEADO::.");
                         System.out.println("1. Crear (Create)");
                         System.out.println("2. Buscar (Read)");
                         System.out.println("3. Actualizar (Update)");
@@ -270,75 +267,85 @@ public class Principal {
                         opcionMenuEmpleado = num.nextInt();
                         switch (opcionMenuEmpleado) {
                             case 1:
-                                System.out.print("Ingrese el nombre del cliente ocasional: ");
+                                System.out.print("Ingrese el nombre del empleado: ");
                                 String nombre = input.nextLine();
-                                System.out.print("Ingrese la cédula del cliente ocasional: ");
+                                System.out.print("Ingrese la cédula del empleado: ");
                                 String cedula = input.nextLine();
-                                System.out.print("Ingrese el teléfono del cliente ocasional: ");
+                                System.out.print("Ingrese el teléfono del empleado: ");
                                 String telefono = input.nextLine();
-                                System.out.print("Ingrese el tipo de pago del cliente ocasional: ");
-                                String tipoPago = input.nextLine();
-                                System.out.print("Ingrese el descuento hacia el cliente ocasional: ");
-                                double desc = doub.nextDouble();
-                                System.out.print("Ingrese el tipo de solicitud del cliente ocasional: ");
-                                String tipoSoli = input.nextLine();
-                                System.out.print("Ingrese la cantidad de solicitudes del cliente ocasional: ");
-                                int cantSoli = num.nextInt();
-                                System.out.print("Ingrese el pago por servicio del cliente ocasional: ");
-                                double pagoServi = doub.nextDouble();
-                                System.out.print("Ingrese el cambio recibido hacia el cliente ocasional: ");
-                                double cambioReci = doub.nextDouble();
-                                System.out.print("Ingrese la calificación por servicio del cliente ocasional: ");
-                                String calificaServi = input.nextLine();
-                                System.out.print("Ingrese la persona que recomendó al cliente ocasional: ");
-                                String recomenPor = input.nextLine();
-                                ClienteOcasional cliOca = new ClienteOcasional(pagoServi, cambioReci, calificaServi, recomenPor, tipoPago, desc, tipoSoli, cantSoli, nombre, cedula, telefono);
-                                controladorCliOc.create(cliOca);
+                                System.out.print("Ingrese el tiempo laboral del empleado: ");
+                                String tiemLab = input.nextLine();
+                                System.out.print("Ingrese el cargo del empleado: ");
+                                String cargo = input.nextLine();
+                                System.out.print("Ingrese el salario del empleado: ");
+                                double salario = doub.nextDouble();
+                                System.out.print("Ingrese el horario laboral del empleado: ");
+                                String horLab = input.nextLine();
+                                System.out.print("Ingrese la hora de almuerzo del empleado: ");
+                                String horAlmu = input.nextLine();
+                                System.out.print("Indique si el empleado está afiliado o no: ");
+                                String afil = input.nextLine();
+                                System.out.println("Ingrese la fecha de contrato del empleado: ");
+                                System.out.print("Día: ");
+                                int dia = num.nextInt();
+                                System.out.print("Mes: ");
+                                int mes = num.nextInt();
+                                System.out.print("Año: ");
+                                int anio = num.nextInt();
+                                GregorianCalendar fechaContra = new GregorianCalendar(anio, (mes + 1), dia);
+                                System.out.print("Ingrese el tipo de empleado que es: ");
+                                String tipoEmp = input.nextLine();
+                                Empleado emp = new Empleado(horAlmu, afil, fechaContra.getTime(), tipoEmp, tiemLab, cargo, salario, horLab, nombre, cedula, telefono);
+                                controladorEm.create(emp);
                                 System.out.println("Objeto creado con éxito");
                                 break;
                             case 2:
                                 System.out.print("Ingrese el código que desea buscar: ");
-                                System.out.print(controladorCliOc.read(num.nextInt()));
+                                System.out.print(controladorEm.read(num.nextInt()));
                                 System.out.println("");
                                 break;
                             case 3:
-                                System.out.print("Ingrese el código que desea actualizar: ");
-                                int cod = num.nextInt();
-                                System.out.print("Ingrese el nombre del cliente ocasional: ");
+                                System.out.print("Ingrese el nombre del empleado: ");
                                 nombre = input.nextLine();
-                                System.out.print("Ingrese la cédula del cliente ocasional: ");
+                                System.out.print("Ingrese la cédula del empleado: ");
                                 cedula = input.nextLine();
-                                System.out.print("Ingrese el teléfono del cliente ocasional: ");
+                                System.out.print("Ingrese el teléfono del empleado: ");
                                 telefono = input.nextLine();
-                                System.out.print("Ingrese el tipo de pago del cliente ocasional: ");
-                                tipoPago = input.nextLine();
-                                System.out.print("Ingrese el descuento hacia el cliente ocasional: ");
-                                desc = doub.nextDouble();
-                                System.out.print("Ingrese el tipo de solicitud del cliente ocasional: ");
-                                tipoSoli = input.nextLine();
-                                System.out.print("Ingrese la cantidad de solicitudes del cliente ocasional: ");
-                                cantSoli = num.nextInt();
-                                System.out.print("Ingrese el pago por servicio del cliente ocasional: ");
-                                pagoServi = doub.nextDouble();
-                                System.out.print("Ingrese el cambio recibido hacia el cliente ocasional: ");
-                                cambioReci = doub.nextDouble();
-                                System.out.print("Ingrese la calificación por servicio del cliente ocasional: ");
-                                calificaServi = input.nextLine();
-                                System.out.print("Ingrese la persona que recomendó al cliente ocasional: ");
-                                recomenPor = input.nextLine();
-                                cliOca = new ClienteOcasional(pagoServi, cambioReci, calificaServi, recomenPor, tipoPago, desc, tipoSoli, cantSoli, nombre, cedula, telefono);
-                                controladorCliOc.update(cliOca, cod);
+                                System.out.print("Ingrese el tiempo laboral del empleado: ");
+                                tiemLab = input.nextLine();
+                                System.out.print("Ingrese el cargo del empleado: ");
+                                cargo = input.nextLine();
+                                System.out.print("Ingrese el salario del empleado: ");
+                                salario = doub.nextDouble();
+                                System.out.print("Ingrese el horario laboral del empleado: ");
+                                horLab = input.nextLine();
+                                System.out.print("Ingrese la hora de almuerzo del empleado: ");
+                                horAlmu = input.nextLine();
+                                System.out.print("Indique si el empleado está afiliado o no: ");
+                                afil = input.nextLine();
+                                System.out.println("Ingrese la fecha de contrato del empleado: ");
+                                System.out.print("Día: ");
+                                dia = num.nextInt();
+                                System.out.print("Mes: ");
+                                mes = num.nextInt();
+                                System.out.print("Año: ");
+                                anio = num.nextInt();
+                                fechaContra = new GregorianCalendar(anio, (mes + 1), dia);
+                                System.out.print("Ingrese el tipo de empleado que es: ");
+                                tipoEmp = input.nextLine();
+                                emp = new Empleado(horAlmu, afil, fechaContra.getTime(), tipoEmp, tiemLab, cargo, salario, horLab, nombre, cedula, telefono);
+                                controladorEm.update(emp);
                                 System.out.println("Objeto actualizado con éxito");
                                 break;
                             case 4:
                                 System.out.print("Ingrese el código del objeto que desee eliminar: ");
-                                cod = num.nextInt();
-                                controladorCliOc.delete(cod);
+                                int cod = num.nextInt();
+                                controladorEm.delete(cod);
                                 System.out.println("Objeto eliminado con éxito");
                                 break;
                             case 5:
-                                System.out.println("Lista de clientes ocasionales: ");
-                                controladorCliOc.list();
+                                System.out.println("Lista de empleados: ");
+                                controladorEm.list();
                                 break;
                             case 6:
                                 System.out.println("Regresando al menú principal");
@@ -347,7 +354,7 @@ public class Principal {
                                 System.out.println("Valor fuera de los parámetros");
                                 break;
                         }
-                    } while (opcionMenuEmpleado!= 6);
+                    } while (opcionMenuEmpleado != 6);
                     break;
 
                 case 4:
@@ -396,8 +403,6 @@ public class Principal {
                                 System.out.println("");
                                 break;
                             case 3:
-                                System.out.print("Ingrese el código que desea actualizar: ");
-                                int cod = num.nextInt();
                                 System.out.print("Ingrese el nombre del cliente ocasional: ");
                                 nombre = input.nextLine();
                                 System.out.print("Ingrese la cédula del cliente ocasional: ");
@@ -421,12 +426,12 @@ public class Principal {
                                 System.out.print("Ingrese la persona que recomendó al cliente ocasional: ");
                                 recomenPor = input.nextLine();
                                 cliOca = new ClienteOcasional(pagoServi, cambioReci, calificaServi, recomenPor, tipoPago, desc, tipoSoli, cantSoli, nombre, cedula, telefono);
-                                controladorCliOc.update(cliOca, cod);
+                                controladorCliOc.update(cliOca);
                                 System.out.println("Objeto actualizado con éxito");
                                 break;
                             case 4:
                                 System.out.print("Ingrese el código del objeto que desee eliminar: ");
-                                cod = num.nextInt();
+                                int cod = num.nextInt();
                                 controladorCliOc.delete(cod);
                                 System.out.println("Objeto eliminado con éxito");
                                 break;
