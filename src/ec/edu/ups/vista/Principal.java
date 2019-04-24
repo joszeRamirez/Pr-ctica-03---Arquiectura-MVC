@@ -12,8 +12,13 @@ import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 /**
+ * Clase Principal
  *
- * @author DELL
+ * Clase que permite la introduccón de datos
+ *
+ * @version 1.0
+ * @since 2019
+ * @author José Ramírez
  */
 public class Principal {
 

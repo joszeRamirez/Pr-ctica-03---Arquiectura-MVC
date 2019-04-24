@@ -30,9 +30,9 @@ public class ControladorClienteOcasional {
     }
 
     public ClienteOcasional read(int codigo) {
-        for (ClienteOcasional clienteFijo : listClienteO) {
-            if (clienteFijo.getCodigo() == codigo) {
-                return clienteFijo;
+        for (ClienteOcasional clienteOcasional : listClienteO) {
+            if (clienteOcasional.getCodigo() == codigo) {
+                return clienteOcasional;
             }
         }
         return null;
