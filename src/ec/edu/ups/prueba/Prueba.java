@@ -13,6 +13,7 @@ import java.util.List;
 public class Prueba {
 
     public static void main(String[] args) {
+
         /*List<Persona> listaTt = new ArrayList<>();
 
         GregorianCalendar fechaInicioEmpresaChris = new GregorianCalendar(2011, 6, 15);
@@ -85,7 +86,7 @@ public class Prueba {
             }
         };
         System.out.println("Cliente " + clienteAnonimo);*/
-        Principal main = new Principal();
-        main.Principal();
+        //Principal mani = new Principal();
+        //mani.Principal();
     }
 }
