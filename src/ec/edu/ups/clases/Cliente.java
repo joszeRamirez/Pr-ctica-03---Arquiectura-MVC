@@ -30,8 +30,8 @@ public abstract class Cliente extends Persona {
     }
 
     public Cliente(String tipoPago, double descuento, String tipoSolicitud,
-            int cantidadSolicitudes, int codigo, String nombre, String cedula, String telefono) {
-        super(codigo, nombre, cedula, telefono);
+            int cantidadSolicitudes, String nombre, String cedula, String telefono) {
+        super(nombre, cedula, telefono);
         this.tipoPago = tipoPago;
         this.descuento = descuento;
         this.tipoSolicitud = tipoSolicitud;

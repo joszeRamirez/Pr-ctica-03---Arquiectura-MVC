@@ -29,9 +29,9 @@ public abstract class Trabajador extends Persona {
     }
 
     public Trabajador(String tiempoDeLaboracion, String cargo,
-            double salario, String horarioLaboral, int codigo,
-            String nombre, String cedula, String telefono) {
-        super(codigo, nombre, cedula, telefono);
+            double salario, String horarioLaboral, String nombre, String cedula,
+            String telefono) {
+        super(nombre, cedula, telefono);
         this.tiempoDeLaboracion = tiempoDeLaboracion;
         this.cargo = cargo;
         this.salario = salario;

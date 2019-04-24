@@ -35,9 +35,9 @@ public final class ClienteFijo extends Cliente implements Interface {
     public ClienteFijo(Date fechaClienteFijo, int numCreditos,
             String ordenCompra, Date fechaRetiroMercaderia,
             String tipoPago, double descuento, String tipoSolicitud,
-            int cantidadSolicitudes, int codigo, String nombre, String cedula,
+            int cantidadSolicitudes, String nombre, String cedula,
             String telefono) {
-        super(tipoPago, descuento, tipoSolicitud, cantidadSolicitudes, codigo,
+        super(tipoPago, descuento, tipoSolicitud, cantidadSolicitudes,
                 nombre, cedula, telefono);
         this.fechaClienteFijo = fechaClienteFijo;
         this.numCreditos = numCreditos;

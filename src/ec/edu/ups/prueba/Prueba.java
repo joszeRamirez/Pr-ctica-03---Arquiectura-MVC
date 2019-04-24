@@ -1,6 +1,7 @@
 package ec.edu.ups.prueba;
 
 import ec.edu.ups.clases.*;
+import ec.edu.ups.vista.Principal;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
 public class Prueba {
 
     public static void main(String[] args) {
-        List<Persona> listaTt = new ArrayList<>();
+        /*List<Persona> listaTt = new ArrayList<>();
 
         GregorianCalendar fechaInicioEmpresaChris = new GregorianCalendar(2011, 6, 15);
         Jefe jefeChris = new Jefe(fechaInicioEmpresaChris.getTime(), "el 28 de cada mes",
@@ -83,6 +84,8 @@ public class Prueba {
                 System.out.println("Mediante referencias");
             }
         };
-        System.out.println("Cliente " + clienteAnonimo);
+        System.out.println("Cliente " + clienteAnonimo);*/
+        Principal main = new Principal();
+        main.Principal();
     }
 }

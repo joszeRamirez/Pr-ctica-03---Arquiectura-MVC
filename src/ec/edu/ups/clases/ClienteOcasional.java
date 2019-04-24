@@ -33,10 +33,10 @@ public final class ClienteOcasional extends Cliente implements Interface {
     public ClienteOcasional(double pagoPorServicio, double cambioRecibido,
             String calificacionPorServicio, String recomendadoPor,
             String tipoPago, double descuento, String tipoSolicitud,
-            int cantidadSolicitudes, int codigo, String nombre, String cedula,
+            int cantidadSolicitudes, String nombre, String cedula,
             String telefono) {
-        super(tipoPago, descuento, tipoSolicitud, cantidadSolicitudes, codigo,
-                nombre, cedula, telefono);
+        super(tipoPago, descuento, tipoSolicitud, cantidadSolicitudes, nombre,
+                cedula, telefono);
         this.pagoPorServicio = pagoPorServicio;
         this.cambioRecibido = cambioRecibido;
         this.calificacionPorServicio = calificacionPorServicio;

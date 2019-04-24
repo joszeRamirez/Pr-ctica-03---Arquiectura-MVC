@@ -24,19 +24,19 @@ public final class Jefe extends Trabajador implements Interface {
     }
 
     public Jefe(String tiempoDeLaboracion, String cargo, double salario,
-            String horarioLaboral, int codigo, String nombre, String cedula,
+            String horarioLaboral, String nombre, String cedula,
             String telefono) {
-        super(tiempoDeLaboracion, cargo, salario, horarioLaboral, codigo,
-                nombre, cedula, telefono);
+        super(tiempoDeLaboracion, cargo, salario, horarioLaboral, nombre,
+                cedula, telefono);
     }
 
     public Jefe(Date fechaInicioEmpresa,
             String diaPagoEmpleados, int cantidadSocios,
             double fondosEmpresa, String tiempoDeLaboracion, String cargo,
-            double salario, String horarioLaboral, int codigo, String nombre,
+            double salario, String horarioLaboral, String nombre,
             String cedula, String telefono) {
-        super(tiempoDeLaboracion, cargo, salario, horarioLaboral, codigo,
-                nombre, cedula, telefono);
+        super(tiempoDeLaboracion, cargo, salario, horarioLaboral, nombre,
+                cedula, telefono);
         this.fechaInicioEmpresa = fechaInicioEmpresa;
         this.diaPagoEmpleados = diaPagoEmpleados;
         this.cantidadSocios = cantidadSocios;

@@ -10,7 +10,7 @@ package ec.edu.ups.clases;
  * @since 2019
  * @author José Ramírez
  */
-public abstract class Persona {
+public abstract class Persona implements Comparable<Persona> {
 
     private int codigo;
     private String nombre;
@@ -42,8 +42,7 @@ public abstract class Persona {
      * @param cedula cedula de la persona
      * @param telefono telefono de la persona
      */
-    public Persona(int codigo, String nombre, String cedula, String telefono) {
-        this.codigo = codigo;
+    public Persona(String nombre, String cedula, String telefono) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.telefono = telefono;
@@ -118,4 +117,40 @@ public abstract class Persona {
                 + ", cedula=" + cedula + ", telefono=" + telefono + '}';
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 67 * hash + this.codigo;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Persona other = (Persona) obj;
+        if (this.codigo != other.codigo) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int compareTo(Persona o) {
+
+        if (nombre.compareToIgnoreCase(o.getNombre()) >= 1) {
+            return 1;
+        } else if (nombre.compareToIgnoreCase(o.getNombre()) <= 1) {
+            return -1;
+        } else {
+            return 0;
+        }
+    }
 }

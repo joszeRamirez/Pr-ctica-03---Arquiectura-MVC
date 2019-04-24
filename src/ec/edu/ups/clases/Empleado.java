@@ -31,10 +31,9 @@ public final class Empleado extends Trabajador implements Interface {
     public Empleado(String horaAlmuerzo, String afiliacion,
             Date fechaContrato, String tipoEmpleado,
             String tiempoDeLaboracion, String cargo, double salario,
-            String horarioLaboral, int codigo, String nombre,
+            String horarioLaboral, String nombre,
             String cedula, String telefono) {
-        super(tiempoDeLaboracion, cargo, salario, horarioLaboral, codigo,
-                nombre, cedula, telefono);
+        super(tiempoDeLaboracion, cargo, salario, horarioLaboral, nombre, cedula, telefono);
         this.horaAlmuerzo = horaAlmuerzo;
         this.afiliacion = afiliacion;
         this.fechaContrato = fechaContrato;
