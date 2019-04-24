@@ -1,8 +1,10 @@
 package ec.edu.ups.controladores;
 
-import ec.edu.ups.clases.Empleado;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import ec.edu.ups.clases.Jefe;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.TreeMap;
+
 
 /**
  * Clase ControladorJefe
@@ -15,50 +17,54 @@ import java.util.TreeSet;
  */
 public class ControladorJefe {
 
-    private SortedSet<Empleado> listEmp;
+    private Map<Integer, Jefe> listJef;
     private int cod;
 
     public ControladorJefe() {
-        listEmp = new TreeSet<>();
+        listJef = new TreeMap<>();
         cod = 0;
     }
 
-    public void create(Empleado objeto) {
+    public void create(Jefe objeto) {
         cod++;
         objeto.setCodigo(cod);
-        listEmp.add(objeto);
+        listJef.put(cod, objeto);
     }
 
-    public Empleado read(int codigo) {
-        for (Empleado empleado : listEmp) {
-            if (empleado.getCodigo() == codigo) {
-                return empleado;
-            }
+    public Jefe read(int codigo) {
+        Iterator it = listJef.keySet().iterator();
+        while (it.hasNext()) {
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: " + key + " -> Valor: " + listJef.get(key));
         }
         return null;
     }
 
-    public void update(Empleado objeto) {
-        if (listEmp.contains(objeto)) {
-            listEmp.remove(objeto);
-            listEmp.add(objeto);
+    public void update(Jefe objeto) {
+        if (listJef.containsKey(objeto)) {
+            listJef.remove(objeto);
+            listJef.put(cod, objeto);
         }
 
     }
 
     public void delete(int codigo) {
-        for (Empleado empleado : listEmp) {
-            if (empleado.getCodigo() == codigo) {
-                listEmp.remove(empleado);
+        Iterator it = listJef.keySet().iterator();
+        while (it.hasNext()) {
+            Integer key = (Integer) it.next();
+            if (key == codigo) {
+                listJef.remove(codigo);
                 break;
             }
         }
     }
 
     public void list() {
-        System.out.println("Lista ordenada por nombre:");
-        for (Empleado empleado : listEmp) {
-            System.out.println(empleado);
+        System.out.println("Lista Ordenada");
+        Iterator it = listJef.keySet().iterator();
+        while (it.hasNext()) {
+            Integer key = (Integer) it.next();
+            System.out.println("Clave: " + key + " -> Valor: " + listJef.get(key));
         }
     }
 }
