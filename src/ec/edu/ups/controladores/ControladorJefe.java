@@ -18,7 +18,7 @@ public class ControladorJefe {
     private SortedSet<Empleado> listEmp;
     private int cod;
 
-    public ControladorEmpleado() {
+    public ControladorJefe() {
         listEmp = new TreeSet<>();
         cod = 0;
     }
