@@ -25,7 +25,6 @@ public abstract class Persona implements Comparable<Persona> {
 
     /**
      * Constructor con atributos en específico
-     *
      * @param codigo codigo de la persona
      * @param cedula cedula de la persona
      */
@@ -37,7 +36,6 @@ public abstract class Persona implements Comparable<Persona> {
     /**
      * Constructor con todos los atributos
      *
-     * @param codigo codigo de la persona
      * @param nombre nombre de la persona
      * @param cedula cedula de la persona
      * @param telefono telefono de la persona
