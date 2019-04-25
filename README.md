@@ -36,20 +36,41 @@ import java.util.List;
  */
 public class ControladorClienteOcasional {
 
+    /**
+     * List privado del objeto listClienteO
+     */
     private List<ClienteOcasional> listClienteO;
+    /**
+     * int privado del objeto cod
+     */
     private int cod;
 
+    /**
+     * Constructor
+     */
     public ControladorClienteOcasional() {
         listClienteO = new ArrayList<>();
         cod = 0;
     }
 
+    /**
+     * Método que crea un objeto y lo agrega a la lista
+     *
+     * @param objeto objeto del cliente ocasional
+     */
     public void create(ClienteOcasional objeto) {
         cod++;
         objeto.setCodigo(cod);
         listClienteO.add(objeto);
     }
 
+    /**
+     * Método que busca un objeto en la lista
+     *
+     * @param codigo código del objeto
+     * @return (Object) clienteOcasional objeto encontrado
+     * @return (null) cuando no encuentra el objeto
+     */
     public ClienteOcasional read(int codigo) {
         for (ClienteOcasional clienteOcasional : listClienteO) {
             if (clienteOcasional.getCodigo() == codigo) {
@@ -59,6 +80,11 @@ public class ControladorClienteOcasional {
         return null;
     }
 
+    /**
+     * Método que actualiza el objeto de la lista
+     *
+     * @param objeto objeto del cliente ocasional
+     */
     public void update(ClienteOcasional objeto) {
         for (int i = 0; i < listClienteO.size(); i++) {
             ClienteOcasional elemento = listClienteO.get(i);
@@ -69,6 +95,11 @@ public class ControladorClienteOcasional {
         }
     }
 
+    /**
+     * Método que borra el objeto de la lista basándose en el código ingresado
+     *
+     * @param codigo código del objeto a eliminar
+     */
     public void delete(int codigo) {
         for (int i = 0; i < listClienteO.size(); i++) {
             ClienteOcasional elemento = listClienteO.get(i);
@@ -79,12 +110,16 @@ public class ControladorClienteOcasional {
         }
     }
 
+    /**
+     * Método que muestra todos los objetos actuales de la lista
+     */
     public void list() {
         for (ClienteOcasional clienteOcasional : listClienteO) {
             System.out.println(clienteOcasional);
         }
     }
 }
+
 4.	Al menos una clase Controlador debe ser implementada usando la interface Set y la clase HashSet.
 package ec.edu.ups.controladores;
 
@@ -103,20 +138,41 @@ import java.util.Set;
  */
 public class ControladorClienteFijo {
 
+    /**
+     * Set privado del objeto listClienteF
+     */
     private Set<ClienteFijo> listClienteF;
+    /**
+     * int privado del objeto cod
+     */
     private int cod;
 
+    /**
+     * Constructor
+     */
     public ControladorClienteFijo() {
         listClienteF = new HashSet<>();
         cod = 0;
     }
 
+    /**
+     * Método que crea un objeto y lo agrega a la lista
+     *
+     * @param objeto objeto del cliente fijo
+     */
     public void create(ClienteFijo objeto) {
         cod++;
         objeto.setCodigo(cod);
         listClienteF.add(objeto);
     }
 
+    /**
+     * Método que busca un objeto en la lista
+     *
+     * @param codigo código del objeto
+     * @return (Object) clienteFijo objeto encontrado
+     * @return (null) cuando no encuentra el objeto
+     */
     public ClienteFijo read(int codigo) {
         for (ClienteFijo clienteFijo : listClienteF) {
             if (clienteFijo.getCodigo() == codigo) {
@@ -126,15 +182,23 @@ public class ControladorClienteFijo {
         return null;
     }
 
+    /**
+     * Método que actualiza el objeto de la lista
+     *
+     * @param objeto objeto del cliente fijo
+     */
     public void update(ClienteFijo objeto) {
         if (listClienteF.contains(objeto)) {
             listClienteF.remove(objeto);
             listClienteF.add(objeto);
-
         }
-
     }
 
+    /**
+     * Método que borra el objeto de la lista basándose en el código ingresado
+     *
+     * @param codigo código del objeto a eliminar
+     */
     public void delete(int codigo) {
         for (ClienteFijo clienteFijo : listClienteF) {
             if (clienteFijo.getCodigo() == codigo) {
@@ -144,12 +208,16 @@ public class ControladorClienteFijo {
         }
     }
 
+    /**
+     * Método que muestra todos los objetos actuales de la lista
+     */
     public void list() {
         for (ClienteFijo clienteFijo : listClienteF) {
             System.out.println(clienteFijo);
         }
     }
 }
+
 5.	Al menos una clase Controlador debe ser implementada usando la interface SortedSet y la clase TreeSet.
 package ec.edu.ups.controladores;
 
@@ -168,20 +236,41 @@ import java.util.TreeSet;
  */
 public class ControladorEmpleado {
 
+    /**
+     * SortedSet privado del objeto listEmp
+     */
     private SortedSet<Empleado> listEmp;
+    /**
+     * int privado del objeto cod
+     */
     private int cod;
 
+    /**
+     * Constructor
+     */
     public ControladorEmpleado() {
         listEmp = new TreeSet<>();
         cod = 0;
     }
 
+    /**
+     * Método que crea un objeto y lo agrega a la lista
+     *
+     * @param objeto objeto del empleado
+     */
     public void create(Empleado objeto) {
         cod++;
         objeto.setCodigo(cod);
         listEmp.add(objeto);
     }
 
+    /**
+     * Método que busca un objeto en la lista
+     *
+     * @param codigo código del objeto
+     * @return (Object) empleado objeto encontrado
+     * @return (null) cuando no encuentra el objeto
+     */
     public Empleado read(int codigo) {
         for (Empleado empleado : listEmp) {
             if (empleado.getCodigo() == codigo) {
@@ -191,14 +280,23 @@ public class ControladorEmpleado {
         return null;
     }
 
+    /**
+     * Método que actualiza el objeto de la lista
+     *
+     * @param objeto objeto del empleado
+     */
     public void update(Empleado objeto) {
         if (listEmp.contains(objeto)) {
             listEmp.remove(objeto);
             listEmp.add(objeto);
         }
-
     }
 
+    /**
+     * Método que borra el objeto de la lista basándose en el código ingresado
+     *
+     * @param codigo codigo del objeto a borrar
+     */
     public void delete(int codigo) {
         for (Empleado empleado : listEmp) {
             if (empleado.getCodigo() == codigo) {
@@ -208,6 +306,10 @@ public class ControladorEmpleado {
         }
     }
 
+    /**
+     * Método que muestra todos los objetos actuales de la lista, ordenándolos
+     * por nombre gracias al método compareTo
+     */
     public void list() {
         System.out.println("Lista ordenada por nombre:");
         for (Empleado empleado : listEmp) {
@@ -215,6 +317,7 @@ public class ControladorEmpleado {
         }
     }
 }
+
 6.	Al menos una clase Controlador debe ser implementada usando la interface Map y la clase HashMap o la interface Map y la clase TreeMap.
 package ec.edu.ups.controladores;
 
@@ -222,7 +325,6 @@ import ec.edu.ups.clases.Jefe;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
-
 
 /**
  * Clase ControladorJefe
@@ -235,20 +337,40 @@ import java.util.TreeMap;
  */
 public class ControladorJefe {
 
+    /**
+     * Map privado del objeto listJef
+     */
     private Map<Integer, Jefe> listJef;
+    /**
+     * int privado del objeto cod
+     */
     private int cod;
 
+    /**
+     * Constructor
+     */
     public ControladorJefe() {
         listJef = new TreeMap<>();
         cod = 0;
     }
 
+    /**
+     * Método que crea un objeto y lo agrega a la lista
+     *
+     * @param objeto objeto del jefe
+     */
     public void create(Jefe objeto) {
         cod++;
         objeto.setCodigo(cod);
         listJef.put(cod, objeto);
     }
 
+    /**
+     * Método que busca un objeto en la lista
+     *
+     * @param codigo código del objeto
+     * @return (null) cuando no encuentra el objeto
+     */
     public Jefe read(int codigo) {
         Iterator it = listJef.keySet().iterator();
         while (it.hasNext()) {
@@ -258,14 +380,23 @@ public class ControladorJefe {
         return null;
     }
 
+    /**
+     * Método que actualiza el objeto de la lista
+     *
+     * @param objeto objeto del cliente ocasional
+     */
     public void update(Jefe objeto) {
         if (listJef.containsKey(objeto)) {
             listJef.remove(objeto);
             listJef.put(cod, objeto);
         }
-
     }
 
+    /**
+     * Método que borra el objeto de la lista basándose en el código ingresado
+     *
+     * @param codigo codigo del objeto a borrar
+     */
     public void delete(int codigo) {
         Iterator it = listJef.keySet().iterator();
         while (it.hasNext()) {
@@ -277,6 +408,10 @@ public class ControladorJefe {
         }
     }
 
+    /**
+     * Método que muestra todos los objetos actuales de la lista, ordenándolos
+     * por clave
+     */
     public void list() {
         System.out.println("Lista Ordenada");
         Iterator it = listJef.keySet().iterator();
@@ -286,6 +421,7 @@ public class ControladorJefe {
         }
     }
 }
+
 7.	Crear una clase “Principal”, en donde se demostrará el funcionamiento del sistema completo a través de la consola de java, usando menús y submenús para acceder a las opciones.
 package ec.edu.ups.vista;
 
@@ -303,7 +439,7 @@ import java.util.Scanner;
 /**
  * Clase Principal
  *
- * Clase que permite la introduccón de datos
+ * Clase que permite la introduccón e impresión de datos
  *
  * @version 1.0
  * @since 2019
@@ -311,7 +447,6 @@ import java.util.Scanner;
  */
 public class Principal {
 
-    //public void Principal() {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Scanner num = new Scanner(System.in);
@@ -375,7 +510,9 @@ public class Principal {
                                 String calificaServi = input.nextLine();
                                 System.out.print("Ingrese la persona que recomendó al cliente ocasional: ");
                                 String recomenPor = input.nextLine();
-                                ClienteOcasional cliOca = new ClienteOcasional(pagoServi, cambioReci, calificaServi, recomenPor, tipoPago, desc, tipoSoli, cantSoli, nombre, cedula, telefono);
+                                ClienteOcasional cliOca = new ClienteOcasional(pagoServi,
+                                        cambioReci, calificaServi, recomenPor, tipoPago,
+                                        desc, tipoSoli, cantSoli, nombre, cedula, telefono);
                                 controladorCliOc.create(cliOca);
                                 System.out.println("Objeto creado con éxito");
                                 break;
@@ -408,7 +545,9 @@ public class Principal {
                                 calificaServi = input.nextLine();
                                 System.out.print("Ingrese la persona que recomendó al cliente ocasional: ");
                                 recomenPor = input.nextLine();
-                                cliOca = new ClienteOcasional(pagoServi, cambioReci, calificaServi, recomenPor, tipoPago, desc, tipoSoli, cantSoli, nombre, cedula, telefono);
+                                cliOca = new ClienteOcasional(pagoServi, cambioReci,
+                                        calificaServi, recomenPor, tipoPago, desc,
+                                        tipoSoli, cantSoli, nombre, cedula, telefono);
                                 controladorCliOc.update(cliOca);
                                 System.out.println("Objeto actualizado con éxito");
                                 break;
@@ -479,7 +618,9 @@ public class Principal {
                                 System.out.print("Año: ");
                                 anio = num.nextInt();
                                 GregorianCalendar fechaRetCli = new GregorianCalendar(anio, (mes + 1), dia);
-                                ClienteFijo cliFi = new ClienteFijo(fechaIniCli.getTime(), credit, ordenCom, fechaRetCli.getTime(), tipoPago, desc, tipoSoli, cantSoli, nombre, cedula, telefono);
+                                ClienteFijo cliFi = new ClienteFijo(fechaIniCli.getTime(),
+                                        credit, ordenCom, fechaRetCli.getTime(), tipoPago,
+                                        desc, tipoSoli, cantSoli, nombre, cedula, telefono);
                                 controladorCliFi.create(cliFi);
                                 System.out.println("Objeto creado con éxito");
                                 break;
@@ -524,7 +665,9 @@ public class Principal {
                                 System.out.print("Año: ");
                                 anio = num.nextInt();
                                 fechaRetCli = new GregorianCalendar(anio, (mes + 1), dia);
-                                cliFi = new ClienteFijo(fechaIniCli.getTime(), credit, ordenCom, fechaRetCli.getTime(), tipoPago, desc, tipoSoli, cantSoli, nombre, cedula, telefono);
+                                cliFi = new ClienteFijo(fechaIniCli.getTime(), credit,
+                                        ordenCom, fechaRetCli.getTime(), tipoPago,
+                                        desc, tipoSoli, cantSoli, nombre, cedula, telefono);
                                 controladorCliFi.update(cliFi);
                                 System.out.println("Objeto actualizado con éxito");
                                 break;
@@ -628,7 +771,9 @@ public class Principal {
                                 fechaContra = new GregorianCalendar(anio, (mes + 1), dia);
                                 System.out.print("Ingrese el tipo de empleado que es: ");
                                 tipoEmp = input.nextLine();
-                                emp = new Empleado(horAlmu, afil, fechaContra.getTime(), tipoEmp, tiemLab, cargo, salario, horLab, nombre, cedula, telefono);
+                                emp = new Empleado(horAlmu, afil, fechaContra.getTime(),
+                                        tipoEmp, tiemLab, cargo, salario, horLab, nombre,
+                                        cedula, telefono);
                                 controladorEm.update(emp);
                                 System.out.println("Objeto actualizado con éxito");
                                 break;
@@ -694,7 +839,9 @@ public class Principal {
                                 int cantSoc = num.nextInt();
                                 System.out.print("Ingrese los fondos de la empresa: ");
                                 double fondEmp = doub.nextDouble();
-                                Jefe jef = new Jefe(fechaIniEmp.getTime(), diaPago, cantSoc, fondEmp, tiemLab, cargo, salario, horLab, nombre, cedula, telefono);
+                                Jefe jef = new Jefe(fechaIniEmp.getTime(), diaPago,
+                                        cantSoc, fondEmp, tiemLab, cargo, salario,
+                                        horLab, nombre, cedula, telefono);
                                 controladorJe.create(jef);
                                 System.out.println("Objeto creado con éxito");
                                 break;
@@ -732,7 +879,9 @@ public class Principal {
                                 cantSoc = num.nextInt();
                                 System.out.print("Ingrese los fondos de la empresa: ");
                                 fondEmp = doub.nextDouble();
-                                jef = new Jefe(fechaIniEmp.getTime(), diaPago, cantSoc, fondEmp, tiemLab, cargo, salario, horLab, nombre, cedula, telefono);
+                                jef = new Jefe(fechaIniEmp.getTime(), diaPago, cantSoc,
+                                        fondEmp, tiemLab, cargo, salario, horLab,
+                                        nombre, cedula, telefono);
                                 controladorJe.update(jef);
                                 System.out.println("Objeto actualizado con éxito");
                                 break;
@@ -767,6 +916,7 @@ public class Principal {
         } while (exitReturn.equalsIgnoreCase("r"));
     }
 }
+
 8.	Desarrollar el diagrama de clases correspondiente usando la herramienta LucidChart. Se debe agregar las clases controladores y la clase “Principal”.
 
 ![Imágen que muestra el diagrama de LucidChart]
